@@ -68,7 +68,7 @@
           <div class="col-lg-6">
             <div class="hero-image-container">
               <img
-                src="https://placehold.co/600x400/4f46e5/white?text=TaskFlow+Dashboard"
+                src="/DashboardImage.png"
                 alt="TaskFlow Dashboard"
                 class="img-fluid hero-image shadow-lg rounded-4"
               />
@@ -282,142 +282,361 @@
       </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-5">
+    <!-- Getting Started Section (Replacing Pricing) -->
+    <section id="getting-started" class="py-5">
       <div class="container py-4">
         <div class="text-center mb-5">
-          <h6 class="text-primary fw-bold">PRICING</h6>
-          <h2 class="display-5 fw-bold">Choose your plan</h2>
+          <h6 class="text-primary fw-bold">GET STARTED</h6>
+          <h2 class="display-5 fw-bold">Start managing tasks in minutes</h2>
           <p class="lead text-muted mx-auto" style="max-width: 600px">
-            We offer flexible pricing options to fit your needs. Start free and
-            upgrade as you grow.
+            TaskFlow is completely free to use. No credit card required, no
+            hidden fees.
           </p>
-          <div class="d-flex justify-content-center mt-4">
-            <div class="form-check form-switch form-check-inline">
-              <label class="form-check-label text-primary fw-bold"
-                >Monthly</label
-              >
-              <input class="form-check-input mx-3" type="checkbox" />
-              <label class="form-check-label">
-                Annual <span class="badge bg-primary ms-1">Save 20%</span>
-              </label>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-10 col-lg-8">
+            <div class="card border-0 shadow-lg">
+              <div class="card-body p-0">
+                <div class="row g-0">
+                  <div
+                    class="col-md-5 bg-primary text-white p-4 p-md-5 d-flex flex-column justify-content-center"
+                  >
+                    <h3 class="fw-bold mb-3">TaskFlow</h3>
+                    <p class="mb-4">
+                      Everything you need to manage tasks effectively -
+                      completely free.
+                    </p>
+                    <ul class="list-unstyled mb-4">
+                      <li class="mb-3 d-flex align-items-center">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <span>Unlimited tasks</span>
+                      </li>
+                      <li class="mb-3 d-flex align-items-center">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <span>Unlimited projects</span>
+                      </li>
+                      <li class="mb-3 d-flex align-items-center">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <span>Team collaboration</span>
+                      </li>
+                      <li class="mb-3 d-flex align-items-center">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <span>All core features</span>
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <span>Community support</span>
+                      </li>
+                    </ul>
+                    <div class="mt-auto">
+                      <div class="d-flex align-items-center">
+                        <div class="d-flex">
+                          <img
+                            src="https://placehold.co/30x30/ffffff/4f46e5?text=U1"
+                            alt="User 1"
+                            class="user-avatar-sm"
+                          />
+                          <img
+                            src="https://placehold.co/30x30/ffffff/4f46e5?text=U2"
+                            alt="User 2"
+                            class="user-avatar-sm"
+                            style="margin-left: -8px"
+                          />
+                          <img
+                            src="https://placehold.co/30x30/ffffff/4f46e5?text=U3"
+                            alt="User 3"
+                            class="user-avatar-sm"
+                            style="margin-left: -8px"
+                          />
+                        </div>
+                        <span class="ms-2 small">Join 10,000+ users</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7 p-4 p-md-5">
+                    <h4 class="fw-bold mb-4">Create your free account</h4>
+                    <form>
+                      <div class="mb-3">
+                        <label for="fullName" class="form-label"
+                          >Full Name</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="fullName"
+                          placeholder="Enter your name"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="email" class="form-label"
+                          >Email Address</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          placeholder="Enter your email"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="password" class="form-label"
+                          >Password</label
+                        >
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          placeholder="Create a password"
+                        />
+                      </div>
+                      <div class="mb-4">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="termsCheck"
+                          />
+                          <label class="form-check-label" for="termsCheck">
+                            I agree to the
+                            <a href="#" class="text-primary"
+                              >Terms of Service</a
+                            >
+                            and
+                            <a href="#" class="text-primary">Privacy Policy</a>
+                          </label>
+                        </div>
+                      </div>
+                      <button
+                        type="submit"
+                        class="btn btn-primary w-100 py-2 mb-3"
+                      >
+                        Create Free Account
+                      </button>
+                      <div class="text-center">
+                        <span class="text-muted small">Or sign up with</span>
+                        <div class="d-flex justify-content-center gap-2 mt-2">
+                          <button class="btn btn-outline-secondary px-3">
+                            <i class="fab fa-google"></i>
+                          </button>
+                          <button class="btn btn-outline-secondary px-3">
+                            <i class="fab fa-github"></i>
+                          </button>
+                          <button class="btn btn-outline-secondary px-3">
+                            <i class="fab fa-microsoft"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-body p-4">
-                <h5 class="fw-bold">Free</h5>
-                <div class="pricing-amount">
-                  <span class="currency">$</span>
-                  <span class="amount">0</span>
-                  <span class="period">/month</span>
-                </div>
-                <p class="text-muted mb-4">
-                  Perfect for individuals and small projects
-                </p>
-                <ul class="list-unstyled mb-4">
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Up to 5 projects
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Basic task management
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Calendar view
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    1 team member
-                  </li>
-                </ul>
-                <button class="btn w-100 btn-outline-primary">
-                  Start Free
-                </button>
+        <!-- Why It's Free Section -->
+        <div class="row mt-5 pt-4">
+          <div class="col-12 text-center mb-4">
+            <h3 class="fw-bold">Why TaskFlow is completely free</h3>
+            <p class="text-muted mx-auto" style="max-width: 700px">
+              We believe that productivity tools should be accessible to
+              everyone. Our mission is to help individuals and teams work more
+              efficiently.
+            </p>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="text-center">
+              <div class="feature-icon-wrapper mx-auto mb-3">
+                <i class="fas fa-heart fa-2x text-primary"></i>
               </div>
+              <h5 class="fw-bold">Community Driven</h5>
+              <p class="text-muted">
+                Built with love by a passionate community of developers who
+                believe in open collaboration.
+              </p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm popular-plan">
-              <div class="card-body p-4">
-                <div class="popular-badge">Most Popular</div>
-                <h5 class="fw-bold">Pro</h5>
-                <div class="pricing-amount">
-                  <span class="currency">$</span>
-                  <span class="amount">12</span>
-                  <span class="period">/month</span>
-                </div>
-                <p class="text-muted mb-4">
-                  Ideal for growing teams and businesses
-                </p>
-                <ul class="list-unstyled mb-4">
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Unlimited projects
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Advanced task management
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Team collaboration
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Priority support
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Up to 10 team members
-                  </li>
-                </ul>
-                <button class="btn w-100 btn-primary">Start Pro Trial</button>
+
+          <div class="col-md-4 mb-4">
+            <div class="text-center">
+              <div class="feature-icon-wrapper mx-auto mb-3">
+                <i class="fas fa-handshake fa-2x text-primary"></i>
               </div>
+              <h5 class="fw-bold">No Strings Attached</h5>
+              <p class="text-muted">
+                No hidden fees, no credit card required, and no feature
+                limitations. What you see is what you get.
+              </p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-body p-4">
-                <h5 class="fw-bold">Enterprise</h5>
-                <div class="pricing-amount">
-                  <span class="currency">$</span>
-                  <span class="amount">29</span>
-                  <span class="period">/month</span>
+
+          <div class="col-md-4 mb-4">
+            <div class="text-center">
+              <div class="feature-icon-wrapper mx-auto mb-3">
+                <i class="fas fa-rocket fa-2x text-primary"></i>
+              </div>
+              <h5 class="fw-bold">Constantly Improving</h5>
+              <p class="text-muted">
+                We're continuously adding new features and improvements based on
+                user feedback.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <h6 class="text-primary fw-bold">FAQ</h6>
+          <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 600px">
+            Everything you need to know about TaskFlow
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item border-0 mb-3 shadow-sm">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Is TaskFlow really free?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes, TaskFlow is completely free to use. We don't have any
+                    paid plans or premium features. All features are available
+                    to all users without any limitations.
+                  </div>
                 </div>
-                <p class="text-muted mb-4">
-                  For large organizations with complex needs
-                </p>
-                <ul class="list-unstyled mb-4">
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Everything in Pro
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Advanced security
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Custom integrations
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Dedicated support
-                  </li>
-                  <li class="mb-2">
-                    <i class="fas fa-check text-success me-2"></i>
-                    Unlimited team members
-                  </li>
-                </ul>
-                <button class="btn w-100 btn-outline-primary">
-                  Contact Sales
-                </button>
+              </div>
+
+              <div class="accordion-item border-0 mb-3 shadow-sm">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    How do you sustain the platform if it's free?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    TaskFlow is maintained by a passionate community of
+                    developers and supported by voluntary contributions. We keep
+                    our operational costs low and focus on building a great
+                    product that people love to use.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 mb-3 shadow-sm">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Is there a limit to how many tasks I can create?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    No, there are no limits on the number of tasks, projects, or
+                    team members you can have in TaskFlow. Use it as much as you
+                    need!
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 mb-3 shadow-sm">
+                <h2 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    How secure is my data?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    We take security seriously. All data is encrypted in transit
+                    and at rest. We follow industry best practices to ensure
+                    your information remains private and secure.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 shadow-sm">
+                <h2 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    Can I contribute to TaskFlow?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    TaskFlow is open to contributions from the community.
+                    Whether you're a developer, designer, or just have great
+                    ideas, we welcome your input. Check out our GitHub
+                    repository to get started.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -432,13 +651,13 @@
           <div class="col-lg-8 mb-4 mb-lg-0">
             <h2 class="display-5 fw-bold">Ready to get started?</h2>
             <p class="lead mb-0">
-              Join thousands of teams that use TaskFlow to manage their work
+              Join thousands of users that use TaskFlow to manage their work
               efficiently.
             </p>
           </div>
           <div class="col-lg-4 text-lg-end">
             <button class="btn btn-light btn-lg px-4">
-              Start Your Free Trial
+              Create Free Account
             </button>
           </div>
         </div>
@@ -463,7 +682,6 @@ export default {
 
 <style scoped>
 /* General Styles */
-
 section {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -516,6 +734,14 @@ section {
   object-fit: cover;
 }
 
+.user-avatar-sm {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
 /* Features Section */
 .feature-icon-wrapper {
   width: 60px;
@@ -535,46 +761,14 @@ section {
   object-fit: cover;
 }
 
-/* Pricing Section */
-.pricing-amount {
-  margin: 20px 0;
+/* Getting Started Section */
+.accordion-button:not(.collapsed) {
+  background-color: #f3f4ff;
+  color: #4f46e5;
 }
 
-.currency {
-  font-size: 20px;
-  font-weight: bold;
-  vertical-align: top;
-  position: relative;
-  top: 8px;
-}
-
-.amount {
-  font-size: 48px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.period {
-  color: #6b7280;
-  font-size: 16px;
-}
-
-.popular-plan {
-  transform: scale(1.05);
-  border: 2px solid #4f46e5 !important;
-  position: relative;
-}
-
-.popular-badge {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  background-color: #4f46e5;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 4px 12px;
-  border-radius: 20px;
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.25);
 }
 
 /* Footer */
@@ -610,10 +804,6 @@ section {
 @media (max-width: 991.98px) {
   .hero-section {
     padding-top: 100px;
-  }
-
-  .popular-plan {
-    transform: scale(1);
   }
 }
 </style>

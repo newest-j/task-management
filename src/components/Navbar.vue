@@ -4,7 +4,7 @@
       class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm"
     >
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+        <a class="navbar-brand d-flex align-items-center">
           <i class="fas fa-check-circle text-primary me-2"></i>
           <span class="fw-bold">TaskFlow</span>
         </a>
@@ -32,7 +32,9 @@
             <router-link to="/dashboard" class="btn btn-outline-primary me-2"
               >Log In</router-link
             >
-            <router-link class="btn btn-primary">Sign Up Free</router-link>
+            <router-link class="btn btn-primary" to="/signup"
+              >Sign Up Free</router-link
+            >
           </div>
         </div>
       </div>

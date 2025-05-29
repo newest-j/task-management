@@ -6,6 +6,7 @@
     <div class="main-content" style="margin-left: 250px">
       <!-- Header -->
       <header class="bg-white shadow-sm border-bottom p-3 mb-4">
+        <offcanvas />
         <div class="d-flex justify-content-between align-items-center">
           <h2 class="mb-0 text-primary">
             <i class="bi bi-house-door me-2"></i>
@@ -343,8 +344,6 @@ export default {};
 </script>
 
 <style scoped>
-/* Sidebar Styles */
-
 /* Main Content */
 .main-content {
   min-height: 100vh;
@@ -464,11 +463,6 @@ header {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-  }
-
   .main-content {
     margin-left: 0 !important;
   }

@@ -1,12 +1,14 @@
 <template>
   <div>
     <div class="container-fluid">
-      <div class="row">
+      <div class="row" style="margin-left: 30px">
         <!-- Sidebar -->
-        <side-bar />
+        <div class="col-md-3 col-lg-2 px-0">
+          <side-bar />
+        </div>
 
         <!-- Main content -->
-        <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4">
+        <div class="col-md-9 col-lg-10 main-content px-md-4">
           <!-- Header -->
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
@@ -392,7 +394,7 @@
               </div>
             </div>
           </div>
-        </main>
+        </div>
       </div>
 
       <!-- Add Task Modal -->
@@ -627,48 +629,35 @@ export default {
 </script>
 
 <style scoped>
+.main-content {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding-top: 1rem;
+}
 .border-left-primary {
   border-left: 0.25rem solid #4e73df !important;
 }
-
 .border-left-success {
   border-left: 0.25rem solid #1cc88a !important;
 }
-
 .border-left-warning {
   border-left: 0.25rem solid #f6c23e !important;
 }
-
 .border-left-danger {
   border-left: 0.25rem solid #e74a3b !important;
 }
-
 .text-xs {
   font-size: 0.7rem;
 }
-
 .fa-2x {
   font-size: 2em;
 }
-
 .text-gray-300 {
   color: #dddfeb !important;
 }
-
 .text-gray-800 {
   color: #5a5c69 !important;
 }
-
-main {
-  margin-left: 0;
-}
-
-@media (min-width: 768px) {
-  main {
-    margin-left: 240px;
-  }
-}
-
 .table tbody tr:hover {
   background-color: #f8f9fa;
 }

@@ -10,6 +10,11 @@ const router = createRouter({
       component: LandingPage,
     },
     {
+      path: "/signup",
+      name: "signup",
+      component: () => import("../views/Signup.vue"),
+    },
+    {
       path: "/dashboard",
       name: "dashboard",
       component: () => import("../views/Dashboard.vue"),
@@ -18,6 +23,11 @@ const router = createRouter({
       path: "/dashboard/tasks",
       name: "tasks",
       component: () => import("../views/Task.vue"),
+    },
+    {
+      path: "/dashboard/statistics",
+      name: "statistics",
+      component: () => import("../views/Statistics.vue"),
     },
   ],
 });
