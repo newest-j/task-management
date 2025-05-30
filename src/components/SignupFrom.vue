@@ -1,19 +1,22 @@
 <template>
   <div>
-    <form>
+    <form @submit.prevent="createAccount">
       <h4 class="fw-bold mb-4">Create your free account</h4>
       <div class="mb-3">
         <label for="fullName" class="form-label">Full Name</label>
         <input
+          v-model="fullname"
           type="text"
           class="form-control"
           id="fullName"
           placeholder="Enter your name"
         />
+        <p class="text-danger"></p>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email Address</label>
         <input
+          v-model="email"
           type="email"
           class="form-control"
           id="email"
@@ -23,6 +26,7 @@
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <input
+          v-model="password"
           type="password"
           class="form-control"
           id="password"
@@ -60,9 +64,5 @@
     </form>
   </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped></style>
