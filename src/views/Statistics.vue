@@ -1,16 +1,17 @@
 <template>
   <div class="container-fluid">
-    <div class="row" style="margin-left: 30px">
+    <div class="row ms-md-5">
       <!-- Sidebar -->
-      <div class="col-md-3 col-lg-2 sidebar px-0">
+      <div class="col-md-3 col-lg-2 px-0">
         <side-bar />
       </div>
       <!-- Main Content -->
       <div class="col-md-9 col-lg-10">
         <div class="statistics-container">
           <!-- Statistics Header -->
+          <offcanvas />
           <div
-            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+            class="d-flex sticky-top justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
             <h1 class="h2">Statistics</h1>
             <div class="btn-toolbar mb-2 mb-md-0">

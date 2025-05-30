@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container-fluid">
-      <div class="row" style="margin-left: 30px">
+      <div class="row ms-md-5">
         <!-- Sidebar -->
         <div class="col-md-3 col-lg-2 px-0">
           <side-bar />
@@ -10,8 +10,9 @@
         <!-- Main content -->
         <div class="col-md-9 col-lg-10 main-content px-md-4">
           <!-- Header -->
+          <offcanvas />
           <div
-            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+            class="d-flex sticky-top justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
             <h1 class="h2">TaskFlow</h1>
             <div class="btn-toolbar mb-2 mb-md-0">

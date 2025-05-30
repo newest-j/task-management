@@ -1,333 +1,342 @@
 <template>
   <div>
-    <side-bar />
-
-    <!-- Main Content -->
-    <div class="main-content" style="margin-left: 250px">
-      <!-- Header -->
-      <header class="bg-white shadow-sm border-bottom p-3 mb-4">
-        <offcanvas />
-        <div class="d-flex justify-content-between align-items-center">
-          <h2 class="mb-0 text-primary">
-            <i class="bi bi-house-door me-2"></i>
-            TaskFlow
-          </h2>
-          <div class="d-flex align-items-center">
-            <span class="text-muted me-3">Welcome back, User!</span>
-            <div
-              class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
-              style="width: 40px; height: 40px"
-            >
-              <i class="bi bi-person"></i>
-            </div>
-          </div>
+    <div class="container-fluid">
+      <div class="row ms-md-5">
+        <div class="col-md-3 col-lg-2 px-0">
+          <side-bar />
         </div>
-      </header>
 
-      <!-- Content Area -->
-      <div class="container-fluid px-4">
-        <div class="row">
-          <!-- Task Creation Form -->
-          <div class="col-lg-6 mb-4">
-            <div class="card shadow-sm h-100">
-              <div class="card-header bg-primary text-white">
-                <h5 class="mb-0">
-                  <i class="bi bi-plus-circle me-2"></i>
-                  Create New Task
-                </h5>
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="mb-3">
-                    <label for="title" class="form-label">
-                      <i class="bi bi-pencil me-1"></i>
-                      Title
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="title"
-                      placeholder="Enter task title"
-                      required
-                    />
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="description" class="form-label">
-                      <i class="bi bi-text-paragraph me-1"></i>
-                      Description
-                    </label>
-                    <textarea
-                      class="form-control"
-                      id="description"
-                      rows="3"
-                      placeholder="Enter task description"
-                    ></textarea>
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="category" class="form-label">
-                      <i class="bi bi-tags me-1"></i>
-                      Category
-                    </label>
-                    <select class="form-select" id="category" required>
-                      <option value="">Select Category</option>
-                      <option value="work">
-                        <i class="bi bi-briefcase"></i>
-                        Work
-                      </option>
-                      <option value="personal">Personal</option>
-                      <option value="urgent">Urgent</option>
-                      <option value="low-priority">Low Priority</option>
-                    </select>
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="dueDate" class="form-label">
-                      <i class="bi bi-calendar me-1"></i>
-                      Due Date
-                    </label>
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="dueDate"
-                      required
-                    />
-                  </div>
-
-                  <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary btn-lg">
-                      <i class="bi bi-check-circle me-2"></i>
-                      Create Task
-                    </button>
-                  </div>
-                </form>
+        <!-- Main Content -->
+        <div class="col-md-9 col-lg-10 main-content">
+          <!-- Header -->
+          <header class="sticky-top bg-white shadow-sm border-bottom p-3 mb-4">
+            <offcanvas />
+            <div class="d-flex justify-content-between align-items-center">
+              <h2 class="mb-0 text-primary">
+                <i class="bi bi-house-door me-2"></i>
+                TaskFlow
+              </h2>
+              <div class="d-flex align-items-center">
+                <span class="text-muted me-3">Welcome back, User!</span>
+                <div
+                  class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px"
+                >
+                  <i class="bi bi-person"></i>
+                </div>
               </div>
             </div>
-          </div>
+          </header>
 
-          <!-- Recent Tasks & Quick Actions -->
-          <div class="col-lg-6 mb-4">
+          <!-- Content Area -->
+          <div class="container-fluid px-4">
             <div class="row">
-              <!-- Recent Tasks -->
-              <div class="col-12 mb-4">
-                <div class="card shadow-sm">
-                  <div class="card-header bg-success text-white">
+              <!-- Task Creation Form -->
+              <div class="col-lg-6 mb-4">
+                <div class="card shadow-sm h-100">
+                  <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">
-                      <i class="bi bi-clock-history me-2"></i>
-                      Recent Tasks
+                      <i class="bi bi-plus-circle me-2"></i>
+                      Create New Task
                     </h5>
                   </div>
                   <div class="card-body">
-                    <!-- Sample Task 1 -->
-                    <div
-                      class="d-flex justify-content-between align-items-center border-bottom py-3"
-                    >
-                      <div class="flex-grow-1">
-                        <h6 class="mb-1">Complete project proposal</h6>
-                        <small class="text-muted">
-                          <span class="badge bg-primary me-2">Work</span>
-                          Due: Jan 15, 2024
-                        </small>
+                    <form>
+                      <div class="mb-3">
+                        <label for="title" class="form-label">
+                          <i class="bi bi-pencil me-1"></i>
+                          Title
+                        </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="title"
+                          placeholder="Enter task title"
+                          required
+                        />
                       </div>
-                      <div class="d-flex gap-1">
-                        <button
-                          class="btn btn-sm btn-outline-primary"
-                          title="Edit"
-                        >
-                          <i class="bi bi-pencil"></i>
-                        </button>
-                        <button
-                          class="btn btn-sm btn-outline-success"
-                          title="Complete"
-                        >
-                          <i class="bi bi-check"></i>
-                        </button>
-                        <button
-                          class="btn btn-sm btn-outline-danger"
-                          title="Delete"
-                        >
-                          <i class="bi bi-trash"></i>
-                        </button>
-                      </div>
-                    </div>
 
-                    <!-- Sample Task 2 -->
-                    <div
-                      class="d-flex justify-content-between align-items-center border-bottom py-3"
-                    >
-                      <div class="flex-grow-1">
-                        <h6 class="mb-1">Buy groceries</h6>
-                        <small class="text-muted">
-                          <span class="badge bg-info me-2">Personal</span>
-                          Due: Jan 10, 2024
-                        </small>
+                      <div class="mb-3">
+                        <label for="description" class="form-label">
+                          <i class="bi bi-text-paragraph me-1"></i>
+                          Description
+                        </label>
+                        <textarea
+                          class="form-control"
+                          id="description"
+                          rows="3"
+                          placeholder="Enter task description"
+                        ></textarea>
                       </div>
-                      <div class="d-flex gap-1">
-                        <button
-                          class="btn btn-sm btn-outline-primary"
-                          title="Edit"
-                        >
-                          <i class="bi bi-pencil"></i>
-                        </button>
-                        <button
-                          class="btn btn-sm btn-outline-success"
-                          title="Complete"
-                        >
-                          <i class="bi bi-check"></i>
-                        </button>
-                        <button
-                          class="btn btn-sm btn-outline-danger"
-                          title="Delete"
-                        >
-                          <i class="bi bi-trash"></i>
-                        </button>
-                      </div>
-                    </div>
 
-                    <!-- Sample Task 3 -->
-                    <div
-                      class="d-flex justify-content-between align-items-center py-3"
-                    >
-                      <div class="flex-grow-1">
-                        <h6 class="mb-1">Review quarterly reports</h6>
-                        <small class="text-muted">
-                          <span class="badge bg-danger me-2">Urgent</span>
-                          Due: Jan 12, 2024
-                        </small>
+                      <div class="mb-3">
+                        <label for="category" class="form-label">
+                          <i class="bi bi-tags me-1"></i>
+                          Category
+                        </label>
+                        <select class="form-select" id="category" required>
+                          <option value="">Select Category</option>
+                          <option value="work">
+                            <i class="bi bi-briefcase"></i>
+                            Work
+                          </option>
+                          <option value="personal">Personal</option>
+                          <option value="urgent">Urgent</option>
+                          <option value="low-priority">Low Priority</option>
+                        </select>
                       </div>
-                      <div class="d-flex gap-1">
-                        <button
-                          class="btn btn-sm btn-outline-primary"
-                          title="Edit"
-                        >
-                          <i class="bi bi-pencil"></i>
-                        </button>
-                        <button
-                          class="btn btn-sm btn-outline-success"
-                          title="Complete"
-                        >
-                          <i class="bi bi-check"></i>
-                        </button>
-                        <button
-                          class="btn btn-sm btn-outline-danger"
-                          title="Delete"
-                        >
-                          <i class="bi bi-trash"></i>
-                        </button>
-                      </div>
-                    </div>
 
-                    <div class="text-center mt-3">
-                      <router-link to="/tasks" class="btn btn-outline-success">
-                        <i class="bi bi-eye me-1"></i>
-                        View All Tasks
-                      </router-link>
-                    </div>
+                      <div class="mb-3">
+                        <label for="dueDate" class="form-label">
+                          <i class="bi bi-calendar me-1"></i>
+                          Due Date
+                        </label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="dueDate"
+                          required
+                        />
+                      </div>
+
+                      <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                          <i class="bi bi-check-circle me-2"></i>
+                          Create Task
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
 
-              <!-- Quick Stats -->
+              <!-- Recent Tasks & Quick Actions -->
+              <div class="col-lg-6 mb-4">
+                <div class="row">
+                  <!-- Recent Tasks -->
+                  <div class="col-12 mb-4">
+                    <div class="card shadow-sm">
+                      <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">
+                          <i class="bi bi-clock-history me-2"></i>
+                          Recent Tasks
+                        </h5>
+                      </div>
+                      <div class="card-body">
+                        <!-- Sample Task 1 -->
+                        <div
+                          class="d-flex justify-content-between align-items-center border-bottom py-3"
+                        >
+                          <div class="flex-grow-1">
+                            <h6 class="mb-1">Complete project proposal</h6>
+                            <small class="text-muted">
+                              <span class="badge bg-primary me-2">Work</span>
+                              Due: Jan 15, 2024
+                            </small>
+                          </div>
+                          <div class="d-flex gap-1">
+                            <button
+                              class="btn btn-sm btn-outline-primary"
+                              title="Edit"
+                            >
+                              <i class="bi bi-pencil"></i>
+                            </button>
+                            <button
+                              class="btn btn-sm btn-outline-success"
+                              title="Complete"
+                            >
+                              <i class="bi bi-check"></i>
+                            </button>
+                            <button
+                              class="btn btn-sm btn-outline-danger"
+                              title="Delete"
+                            >
+                              <i class="bi bi-trash"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <!-- Sample Task 2 -->
+                        <div
+                          class="d-flex justify-content-between align-items-center border-bottom py-3"
+                        >
+                          <div class="flex-grow-1">
+                            <h6 class="mb-1">Buy groceries</h6>
+                            <small class="text-muted">
+                              <span class="badge bg-info me-2">Personal</span>
+                              Due: Jan 10, 2024
+                            </small>
+                          </div>
+                          <div class="d-flex gap-1">
+                            <button
+                              class="btn btn-sm btn-outline-primary"
+                              title="Edit"
+                            >
+                              <i class="bi bi-pencil"></i>
+                            </button>
+                            <button
+                              class="btn btn-sm btn-outline-success"
+                              title="Complete"
+                            >
+                              <i class="bi bi-check"></i>
+                            </button>
+                            <button
+                              class="btn btn-sm btn-outline-danger"
+                              title="Delete"
+                            >
+                              <i class="bi bi-trash"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <!-- Sample Task 3 -->
+                        <div
+                          class="d-flex justify-content-between align-items-center py-3"
+                        >
+                          <div class="flex-grow-1">
+                            <h6 class="mb-1">Review quarterly reports</h6>
+                            <small class="text-muted">
+                              <span class="badge bg-danger me-2">Urgent</span>
+                              Due: Jan 12, 2024
+                            </small>
+                          </div>
+                          <div class="d-flex gap-1">
+                            <button
+                              class="btn btn-sm btn-outline-primary"
+                              title="Edit"
+                            >
+                              <i class="bi bi-pencil"></i>
+                            </button>
+                            <button
+                              class="btn btn-sm btn-outline-success"
+                              title="Complete"
+                            >
+                              <i class="bi bi-check"></i>
+                            </button>
+                            <button
+                              class="btn btn-sm btn-outline-danger"
+                              title="Delete"
+                            >
+                              <i class="bi bi-trash"></i>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="text-center mt-3">
+                          <router-link
+                            to="/tasks"
+                            class="btn btn-outline-success"
+                          >
+                            <i class="bi bi-eye me-1"></i>
+                            View All Tasks
+                          </router-link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Quick Stats -->
+                  <div class="col-12">
+                    <div class="card shadow-sm">
+                      <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">
+                          <i class="bi bi-speedometer2 me-2"></i>
+                          Quick Overview
+                        </h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="row text-center">
+                          <div class="col-6 mb-3">
+                            <div class="border-end">
+                              <h4 class="text-primary mb-1">12</h4>
+                              <small class="text-muted">Total Tasks</small>
+                            </div>
+                          </div>
+                          <div class="col-6 mb-3">
+                            <h4 class="text-success mb-1">8</h4>
+                            <small class="text-muted">Completed</small>
+                          </div>
+                          <div class="col-6">
+                            <div class="border-end">
+                              <h4 class="text-warning mb-1">4</h4>
+                              <small class="text-muted">Pending</small>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <h4 class="text-danger mb-1">2</h4>
+                            <small class="text-muted">Overdue</small>
+                          </div>
+                        </div>
+
+                        <div class="mt-3">
+                          <div class="d-flex justify-content-between mb-1">
+                            <small>Progress</small>
+                            <small>67%</small>
+                          </div>
+                          <div class="progress" style="height: 8px">
+                            <div
+                              class="progress-bar bg-success"
+                              role="progressbar"
+                              style="width: 67%"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Actions Row -->
+            <div class="row">
               <div class="col-12">
                 <div class="card shadow-sm">
-                  <div class="card-header bg-info text-white">
+                  <div class="card-header bg-secondary text-white">
                     <h5 class="mb-0">
-                      <i class="bi bi-speedometer2 me-2"></i>
-                      Quick Overview
+                      <i class="bi bi-lightning me-2"></i>
+                      Quick Actions
                     </h5>
                   </div>
                   <div class="card-body">
-                    <div class="row text-center">
-                      <div class="col-6 mb-3">
-                        <div class="border-end">
-                          <h4 class="text-primary mb-1">12</h4>
-                          <small class="text-muted">Total Tasks</small>
-                        </div>
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <router-link
+                          to="/home"
+                          class="btn btn-outline-primary w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
+                        >
+                          <i class="bi bi-plus-circle display-6 mb-2"></i>
+                          <span>Add Task</span>
+                        </router-link>
                       </div>
-                      <div class="col-6 mb-3">
-                        <h4 class="text-success mb-1">8</h4>
-                        <small class="text-muted">Completed</small>
+                      <div class="col-md-3 mb-3">
+                        <router-link
+                          to="/tasks"
+                          class="btn btn-outline-success w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
+                        >
+                          <i class="bi bi-list-check display-6 mb-2"></i>
+                          <span>View Tasks</span>
+                        </router-link>
                       </div>
-                      <div class="col-6">
-                        <div class="border-end">
-                          <h4 class="text-warning mb-1">4</h4>
-                          <small class="text-muted">Pending</small>
-                        </div>
+                      <div class="col-md-3 mb-3">
+                        <router-link
+                          to="/statistics"
+                          class="btn btn-outline-info w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
+                        >
+                          <i class="bi bi-bar-chart display-6 mb-2"></i>
+                          <span>Statistics</span>
+                        </router-link>
                       </div>
-                      <div class="col-6">
-                        <h4 class="text-danger mb-1">2</h4>
-                        <small class="text-muted">Overdue</small>
+                      <div class="col-md-3 mb-3">
+                        <router-link
+                          to="/settings"
+                          class="btn btn-outline-warning w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
+                        >
+                          <i class="bi bi-gear display-6 mb-2"></i>
+                          <span>Settings</span>
+                        </router-link>
                       </div>
                     </div>
-
-                    <div class="mt-3">
-                      <div class="d-flex justify-content-between mb-1">
-                        <small>Progress</small>
-                        <small>67%</small>
-                      </div>
-                      <div class="progress" style="height: 8px">
-                        <div
-                          class="progress-bar bg-success"
-                          role="progressbar"
-                          style="width: 67%"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Actions Row -->
-        <div class="row">
-          <div class="col-12">
-            <div class="card shadow-sm">
-              <div class="card-header bg-secondary text-white">
-                <h5 class="mb-0">
-                  <i class="bi bi-lightning me-2"></i>
-                  Quick Actions
-                </h5>
-              </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-3 mb-3">
-                    <router-link
-                      to="/home"
-                      class="btn btn-outline-primary w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
-                    >
-                      <i class="bi bi-plus-circle display-6 mb-2"></i>
-                      <span>Add Task</span>
-                    </router-link>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <router-link
-                      to="/tasks"
-                      class="btn btn-outline-success w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
-                    >
-                      <i class="bi bi-list-check display-6 mb-2"></i>
-                      <span>View Tasks</span>
-                    </router-link>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <router-link
-                      to="/statistics"
-                      class="btn btn-outline-info w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
-                    >
-                      <i class="bi bi-bar-chart display-6 mb-2"></i>
-                      <span>Statistics</span>
-                    </router-link>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <router-link
-                      to="/settings"
-                      class="btn btn-outline-warning w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
-                    >
-                      <i class="bi bi-gear display-6 mb-2"></i>
-                      <span>Settings</span>
-                    </router-link>
                   </div>
                 </div>
               </div>
@@ -348,26 +357,6 @@ export default {};
 .main-content {
   min-height: 100vh;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
-
-/* Navigation Links */
-.nav-link {
-  transition: all 0.3s ease;
-  border-radius: 0.375rem;
-  margin-bottom: 0.25rem;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  transform: translateX(5px);
-  color: white !important;
-}
-
-.nav-link.router-link-active,
-.nav-link.bg-primary {
-  background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%) !important;
-  color: white !important;
 }
 
 /* Card Enhancements */
@@ -462,11 +451,7 @@ header {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .main-content {
-    margin-left: 0 !important;
-  }
-
+@media screen and (max-width: 768px) {
   .card {
     margin-bottom: 1rem;
   }

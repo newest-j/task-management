@@ -22,19 +22,30 @@
               <a class="nav-link" href="#features">Features</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#pricing">Pricing</a>
+              <a class="nav-link" href="#create-account">Create Account</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#testimonials">Testimonials</a>
             </li>
           </ul>
           <div class="ms-lg-3 mt-3 mt-lg-0 d-flex">
-            <router-link to="/dashboard" class="btn btn-outline-primary me-2"
-              >Log In</router-link
+            <li
+              type="button"
+              class="btn btn-outline-primary me-2"
+              @click="$emit('change-form', 'login')"
             >
-            <router-link class="btn btn-primary" to="/signup"
-              >Sign Up Free</router-link
+              <a class="text-decoration-none" href="#create-account"> Log In</a>
+            </li>
+
+            <li
+              type="button"
+              class="btn btn-primary"
+              @click="$emit('change-form', 'signup')"
             >
+              <a class="text-white text-decoration-none" href="#create-account">
+                Sign Up Free</a
+              >
+            </li>
           </div>
         </div>
       </div>

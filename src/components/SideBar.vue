@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- Sidebar -->
-
     <nav
       class="sidebar d-none d-md-block bg-dark text-white position-fixed h-100"
       style="width: 250px; z-index: 1"
@@ -62,7 +60,9 @@
       aria-labelledby="offcanvasNavbarLabel"
     >
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Task Manager</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+          <i class="bi bi-kanban me-2"></i>Task Manager
+        </h5>
         <button
           type="button"
           class="btn-close btn-close-white"
@@ -140,4 +140,24 @@ export default {
     display: none;
   }
 } */
+
+/* Navigation Links */
+.nav-link {
+  transition: all 0.3s ease;
+  border-radius: 0.375rem;
+  margin-bottom: 0.25rem;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transform: translateX(5px);
+  color: white !important;
+}
+
+.nav-link.router-link-active,
+.nav-link.bg-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%) !important;
+  color: white !important;
+}
 </style>
