@@ -224,7 +224,7 @@
 
                         <div class="text-center mt-3">
                           <router-link
-                            to="/tasks"
+                            to="/dashboard/tasks"
                             class="btn btn-outline-success"
                           >
                             <i class="bi bi-eye me-1"></i>
@@ -300,16 +300,7 @@
                   </div>
                   <div class="card-body">
                     <div class="row">
-                      <div class="col-md-3 mb-3">
-                        <router-link
-                          to="/dashboard/tasks"
-                          class="btn btn-outline-primary w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
-                        >
-                          <i class="bi bi-plus-circle display-6 mb-2"></i>
-                          <span>Add Task</span>
-                        </router-link>
-                      </div>
-                      <div class="col-md-3 mb-3">
+                      <div class="col-md-4 mb-3">
                         <router-link
                           to="/dashboard/tasks"
                           class="btn btn-outline-success w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
@@ -318,7 +309,7 @@
                           <span>View Tasks</span>
                         </router-link>
                       </div>
-                      <div class="col-md-3 mb-3">
+                      <div class="col-md-4 mb-3">
                         <router-link
                           to="/dashboard/statistics"
                           class="btn btn-outline-info w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
@@ -327,7 +318,7 @@
                           <span>Statistics</span>
                         </router-link>
                       </div>
-                      <div class="col-md-3 mb-3">
+                      <div class="col-md-4 mb-3">
                         <router-link
                           to="/dashboard/settings"
                           class="btn btn-outline-warning w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
