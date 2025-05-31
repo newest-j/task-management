@@ -43,7 +43,7 @@
         </li>
         <li class="nav-item mt-auto">
           <router-link
-            to="/logout"
+            to="/"
             class="nav-link text-white d-flex align-items-center text-danger"
           >
             <i class="bi bi-box-arrow-right me-2"></i>
@@ -105,7 +105,7 @@
           </li>
           <li class="nav-item mt-auto">
             <router-link
-              to="/logout"
+              to="/"
               class="nav-link text-white d-flex align-items-center text-danger"
             >
               <i class="bi bi-box-arrow-right me-2"></i>

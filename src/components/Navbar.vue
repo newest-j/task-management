@@ -54,7 +54,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  emits: ["change-form"],
+};
 </script>
 
 <style lang="scss" scoped></style>

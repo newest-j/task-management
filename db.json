@@ -1,10 +1,40 @@
 {
   "users": [
     {
-      "id": "3bde",
-      "fullname": "vjj",
-      "email": "ib@hmam.com",
-      "password": "2e2"
+      "id": "1",
+      "fullname": "Joshua Agbaoye",
+      "email": "ibukunagbaoye@gmail.com",
+      "password": "Hello123@",
+      "tasks": {
+        "all": [],
+        "completed": [],
+        "pending": [],
+        "overdue": []
+      },
+      "stats": {
+        "total": 0,
+        "completed": 0,
+        "pending": 0,
+        "overdue": 0
+      }
+    },
+    {
+      "id": "2",
+      "fullname": "John Doe",
+      "email": "test@gmail.com",
+      "password": "H123@Q34",
+      "tasks": {
+        "all": [],
+        "completed": [],
+        "pending": [],
+        "overdue": []
+      },
+      "stats": {
+        "total": 0,
+        "completed": 0,
+        "pending": 0,
+        "overdue": 0
+      }
     }
   ]
 }

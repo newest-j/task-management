@@ -602,14 +602,14 @@
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 import LoginForm from "@/components/LoginForm.vue";
-import SignupFrom from "@/components/SignupFrom.vue";
+import SignupForm from "@/components/SignupForm.vue";
 
 export default {
   components: {
     Navbar,
     Footer,
     LoginForm,
-    SignupFrom,
+    SignupForm,
   },
   data() {
     return {
@@ -623,7 +623,7 @@ export default {
   },
   computed: {
     formComponent() {
-      return this.showform === "signup" ? "SignupFrom" : "LoginForm";
+      return this.showform === "signup" ? "SignupForm" : "LoginForm";
     },
   },
 };

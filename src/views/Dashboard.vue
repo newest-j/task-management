@@ -302,7 +302,7 @@
                     <div class="row">
                       <div class="col-md-3 mb-3">
                         <router-link
-                          to="/home"
+                          to="/dashboard/tasks"
                           class="btn btn-outline-primary w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
                         >
                           <i class="bi bi-plus-circle display-6 mb-2"></i>
@@ -311,7 +311,7 @@
                       </div>
                       <div class="col-md-3 mb-3">
                         <router-link
-                          to="/tasks"
+                          to="/dashboard/tasks"
                           class="btn btn-outline-success w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
                         >
                           <i class="bi bi-list-check display-6 mb-2"></i>
@@ -320,7 +320,7 @@
                       </div>
                       <div class="col-md-3 mb-3">
                         <router-link
-                          to="/statistics"
+                          to="/dashboard/statistics"
                           class="btn btn-outline-info w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
                         >
                           <i class="bi bi-bar-chart display-6 mb-2"></i>
@@ -329,7 +329,7 @@
                       </div>
                       <div class="col-md-3 mb-3">
                         <router-link
-                          to="/settings"
+                          to="/dashboard/settings"
                           class="btn btn-outline-warning w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
                         >
                           <i class="bi bi-gear display-6 mb-2"></i>
