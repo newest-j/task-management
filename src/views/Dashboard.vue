@@ -17,7 +17,9 @@
                 TaskFlow
               </h2>
               <div class="d-flex align-items-center">
-                <span class="text-muted me-3">Welcome back, User!</span>
+                <span class="text-muted me-3">
+                  {{ userLoaded ? welcomeMessage : "Loading..." }}</span
+                >
                 <div
                   class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
                   style="width: 40px; height: 40px"
@@ -41,13 +43,14 @@
                     </h5>
                   </div>
                   <div class="card-body">
-                    <form>
+                    <form @submit.prevent="">
                       <div class="mb-3">
                         <label for="title" class="form-label">
                           <i class="bi bi-pencil me-1"></i>
                           Title
                         </label>
                         <input
+                          v-model="taskname"
                           type="text"
                           class="form-control"
                           id="title"
@@ -62,6 +65,7 @@
                           Description
                         </label>
                         <textarea
+                          v-model="taskdescription"
                           class="form-control"
                           id="description"
                           rows="3"
@@ -74,7 +78,12 @@
                           <i class="bi bi-tags me-1"></i>
                           Category
                         </label>
-                        <select class="form-select" id="category" required>
+                        <select
+                          v-model="taskcategory"
+                          class="form-select"
+                          id="category"
+                          required
+                        >
                           <option value="">Select Category</option>
                           <option value="work">
                             <i class="bi bi-briefcase"></i>
@@ -92,6 +101,7 @@
                           Due Date
                         </label>
                         <input
+                          v-model="taskduedate"
                           type="date"
                           class="form-control"
                           id="dueDate"
@@ -340,7 +350,33 @@
 </template>
 
 <script>
-export default {};
+import { userDetailsStore } from "@/stores/usersDetailsStore";
+export default {
+  data() {
+    return {
+      userStore: userDetailsStore(),
+      userLoaded: false,
+    };
+  },
+
+  async created() {
+    // Load user data when component is created
+    const success = await this.userStore.loadCurrentUser();
+
+    if (!success) {
+      // Redirect to login if user data couldn't be loaded
+      this.$router.push("/");
+    } else {
+      this.userLoaded = true;
+    }
+  },
+
+  computed: {
+    welcomeMessage() {
+      return `Welcome back, ${this.userStore.fullname}!`;
+    },
+  },
+};
 </script>
 
 <style scoped>

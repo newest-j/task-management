@@ -258,5 +258,33 @@ export const userDetailsStore = defineStore("userDetails", {
         });
       }
     },
+
+    async loadCurrentUser() {
+      try {
+        const userId = JSON.parse(localStorage.getItem("currentUserId"));
+
+        if (!userId) {
+          return false;
+        }
+
+        // Fetch user data from the server
+        const response = await fetch(`http://localhost:3000/users/${userId}`);
+
+        if (!response.ok) {
+          throw new Error("Failed to load user data");
+        }
+
+        const userData = await response.json();
+
+        // Update store with user data
+        this.fullname = userData.fullname;
+        this.email = userData.email;
+
+        return true;
+      } catch (error) {
+        console.error("Error loading user data:", error);
+        return false;
+      }
+    },
   },
 });
