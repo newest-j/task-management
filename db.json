@@ -35,6 +35,24 @@
         "pending": 0,
         "overdue": 0
       }
+    },
+    {
+      "id": "3",
+      "fullname": "sam smith",
+      "email": "testing@gmail.com",
+      "password": "Test123$",
+      "tasks": {
+        "all": [],
+        "completed": [],
+        "pending": [],
+        "overdue": []
+      },
+      "stats": {
+        "total": 0,
+        "completed": 0,
+        "pending": 0,
+        "overdue": 0
+      }
     }
   ]
 }

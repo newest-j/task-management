@@ -42,13 +42,13 @@
           </router-link>
         </li>
         <li class="nav-item mt-auto">
-          <router-link
-            to="/"
+          <button
+            @click="logout"
             class="nav-link text-white d-flex align-items-center text-danger"
           >
             <i class="bi bi-box-arrow-right me-2"></i>
             Logout
-          </router-link>
+          </button>
         </li>
       </ul>
     </nav>
@@ -104,13 +104,13 @@
             </router-link>
           </li>
           <li class="nav-item mt-auto">
-            <router-link
-              to="/"
+            <button
+              @click="logout"
               class="nav-link text-white d-flex align-items-center text-danger"
             >
               <i class="bi bi-box-arrow-right me-2"></i>
               Logout
-            </router-link>
+            </button>
           </li>
         </ul>
       </div>
@@ -120,8 +120,52 @@
 
 <script>
 import Offcanvas from "./Offcanvas.vue";
+import Swal from "sweetalert2"; // Import SweetAlert
+
 export default {
   components: { Offcanvas },
+  data() {
+    return {};
+  },
+  methods: {
+    logout() {
+      const userId = JSON.parse(localStorage.getItem("currentUserId"));
+      if (userId) {
+        // Show confirmation dialog
+        Swal.fire({
+          title: "Logout Confirmation",
+          text: "Are you sure you want to log out?",
+          icon: "question",
+          showCancelButton: true,
+          confirmButtonColor: "#d33",
+          cancelButtonColor: "#3085d6",
+          confirmButtonText: "Yes, logout",
+          cancelButtonText: "Cancel",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Remove user ID from localStorage
+            localStorage.removeItem("currentUserId");
+
+            // Show success message
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Logged out successfully!",
+              showConfirmButton: false,
+              timer: 1500,
+              toast: true,
+            });
+
+            // Navigate to landing page
+            this.$router.push("/");
+          }
+        });
+      } else {
+        // If no user ID found, just redirect
+        this.$router.push("/");
+      }
+    },
+  },
 };
 </script>
 
@@ -135,13 +179,7 @@ export default {
 .sidebar-header {
   background: linear-gradient(135deg, #343a40 0%, #495057 100%);
 }
-/* @media screen and (max-width: 768px) {
-  nav {
-    display: none;
-  }
-} */
 
-/* Navigation Links */
 .nav-link {
   transition: all 0.3s ease;
   border-radius: 0.375rem;

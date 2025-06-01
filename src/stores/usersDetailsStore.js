@@ -63,11 +63,9 @@ export const userDetailsStore = defineStore("userDetails", {
 
     async createUser(userData, router) {
       try {
-        // Fetch existing users
         const usersResponse = await fetch("http://localhost:3000/users");
         const users = await usersResponse.json();
 
-        // Check for duplicate email (case-insensitive)
         const emailExists = users.some(
           (user) => user.email.toLowerCase() === userData.email.toLowerCase()
         );
@@ -80,10 +78,9 @@ export const userDetailsStore = defineStore("userDetails", {
             timer: 3000,
             toast: true,
           });
-          return; // Stop execution here
+          return;
         }
 
-        // Check for duplicate password
         const passwordExists = users.some(
           (user) => user.password === userData.password
         );
@@ -97,10 +94,9 @@ export const userDetailsStore = defineStore("userDetails", {
             timer: 3000,
             toast: true,
           });
-          return; // Stop execution here
+          return;
         }
 
-        // Get max id for progressive new id
         let maxId = 0;
         users.forEach((user) => {
           const numericId = parseInt(user.id, 10);
@@ -150,13 +146,15 @@ export const userDetailsStore = defineStore("userDetails", {
           toast: true,
         });
 
+        // Store logged-in user ID after signup
+        localStorage.setItem("currentUserId", createdUser.id);
+
         // Reset form fields after successful creation
         this.fullname = "";
         this.email = "";
         this.password = "";
         this.agreeTerms = false;
 
-        // Redirect after 3 seconds delay
         setTimeout(() => {
           if (router) router.push("/dashboard");
         }, 1500);
@@ -188,7 +186,6 @@ export const userDetailsStore = defineStore("userDetails", {
         !this.errors.password &&
         !this.errors.terms
       ) {
-        // Pass router to createUser for redirect
         await this.createUser(
           {
             fullname: this.fullname,
@@ -230,10 +227,8 @@ export const userDetailsStore = defineStore("userDetails", {
             toast: true,
           });
 
-          // Optionally, store logged-in user info in localStorage or store
           localStorage.setItem("currentUserId", matchedUser.id);
 
-          // Redirect to dashboard after 3 seconds
           setTimeout(() => {
             if (router) router.push("/dashboard");
           }, 1500);
