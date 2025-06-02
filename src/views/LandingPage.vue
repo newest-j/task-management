@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Navigation -->
-    <Navbar @change-form="changeForm" />
+    <Navbar />
     <!-- Hero Section -->
     <section class="hero-section py-5">
       <div class="container">
@@ -16,9 +16,12 @@
               intuitive task management platform.
             </p>
             <div class="d-flex flex-wrap gap-2 mb-4">
-              <button class="btn btn-primary btn-lg px-4">
-                Get Started — It's Free
-              </button>
+              <router-link to="/signup">
+                <button class="btn btn-primary btn-lg px-4">
+                  Get Started — It's Free
+                </button>
+              </router-link>
+
               <button
                 class="btn btn-outline-dark btn-lg px-4 d-flex align-items-center"
               >
@@ -283,7 +286,7 @@
     </section>
 
     <!-- Getting Started Section (Replacing Pricing) -->
-    <section id="create-account" class="py-5">
+    <section class="py-5">
       <div class="container py-4">
         <div class="text-center mb-5">
           <h6 class="text-primary fw-bold">GET STARTED</h6>
@@ -292,76 +295,6 @@
             TaskFlow is completely free to use. No credit card required, no
             hidden fees.
           </p>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-10 col-lg-8">
-            <div class="card border-0 shadow-lg">
-              <div class="card-body p-0">
-                <div class="row g-0">
-                  <div
-                    class="col-md-5 bg-primary text-white p-4 p-md-5 d-flex flex-column justify-content-center"
-                  >
-                    <h3 class="fw-bold mb-3">TaskFlow</h3>
-                    <p class="mb-4">
-                      Everything you need to manage tasks effectively -
-                      completely free.
-                    </p>
-                    <ul class="list-unstyled mb-4">
-                      <li class="mb-3 d-flex align-items-center">
-                        <i class="fas fa-check-circle me-2"></i>
-                        <span>Unlimited tasks</span>
-                      </li>
-                      <li class="mb-3 d-flex align-items-center">
-                        <i class="fas fa-check-circle me-2"></i>
-                        <span>Unlimited projects</span>
-                      </li>
-                      <li class="mb-3 d-flex align-items-center">
-                        <i class="fas fa-check-circle me-2"></i>
-                        <span>Team collaboration</span>
-                      </li>
-                      <li class="mb-3 d-flex align-items-center">
-                        <i class="fas fa-check-circle me-2"></i>
-                        <span>All core features</span>
-                      </li>
-                      <li class="d-flex align-items-center">
-                        <i class="fas fa-check-circle me-2"></i>
-                        <span>Community support</span>
-                      </li>
-                    </ul>
-                    <div class="mt-auto">
-                      <div class="d-flex align-items-center">
-                        <div class="d-flex">
-                          <img
-                            src="https://placehold.co/30x30/ffffff/4f46e5?text=U1"
-                            alt="User 1"
-                            class="user-avatar-sm"
-                          />
-                          <img
-                            src="https://placehold.co/30x30/ffffff/4f46e5?text=U2"
-                            alt="User 2"
-                            class="user-avatar-sm"
-                            style="margin-left: -8px"
-                          />
-                          <img
-                            src="https://placehold.co/30x30/ffffff/4f46e5?text=U3"
-                            alt="User 3"
-                            class="user-avatar-sm"
-                            style="margin-left: -8px"
-                          />
-                        </div>
-                        <span class="ms-2 small">Join 10,000+ users</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-7 p-4 p-md-5">
-                    <!-- the for comes here -->
-                    <component :is="formComponent"></component>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- Why It's Free Section -->
@@ -585,9 +518,11 @@
             </p>
           </div>
           <div class="col-lg-4 text-lg-end">
-            <button class="btn btn-light btn-lg px-4">
-              Create Free Account
-            </button>
+            <router-link to="/signup">
+              <button class="btn btn-light btn-lg px-4">
+                Create Free Account
+              </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -612,19 +547,7 @@ export default {
     SignupForm,
   },
   data() {
-    return {
-      showform: "signup",
-    };
-  },
-  methods: {
-    changeForm(formType) {
-      this.showform = formType;
-    },
-  },
-  computed: {
-    formComponent() {
-      return this.showform === "signup" ? "SignupForm" : "LoginForm";
-    },
+    return {};
   },
 };
 </script>

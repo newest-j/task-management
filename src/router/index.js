@@ -10,6 +10,16 @@ const router = createRouter({
       component: LandingPage,
     },
     {
+      path: "/login",
+      name: "login",
+      component: () => import("../components/LoginForm.vue"),
+    },
+    {
+      path: "/signup",
+      name: "signup",
+      component: () => import("../components/SignupForm.vue"),
+    },
+    {
       path: "/dashboard",
       name: "dashboard",
       component: () => import("../views/Dashboard.vue"),

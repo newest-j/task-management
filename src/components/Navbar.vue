@@ -21,31 +21,24 @@
             <li class="nav-item">
               <a class="nav-link" href="#features">Features</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#create-account">Create Account</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#testimonials">Testimonials</a>
             </li>
           </ul>
           <div class="ms-lg-3 mt-3 mt-lg-0 d-flex">
-            <li
-              type="button"
-              class="btn btn-outline-primary me-2"
-              @click="$emit('change-form', 'login')"
+            <router-link
+              to="/login"
+              class="btn btn-outline-primary me-2 text-decoration-none"
             >
-              <a class="text-decoration-none" href="#create-account"> Log In</a>
-            </li>
-
-            <li
-              type="button"
-              class="btn btn-primary"
-              @click="$emit('change-form', 'signup')"
+              Log In
+            </router-link>
+            <router-link
+              to="/signup"
+              class="btn btn-primary text-white text-decoration-none"
             >
-              <a class="text-white text-decoration-none" href="#create-account">
-                Sign Up Free</a
-              >
-            </li>
+              Sign Up Free
+            </router-link>
           </div>
         </div>
       </div>
@@ -54,9 +47,7 @@
 </template>
 
 <script>
-export default {
-  emits: ["change-form"],
-};
+export default {};
 </script>
 
 <style lang="scss" scoped></style>

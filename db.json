@@ -24,6 +24,66 @@
       "email": "test@gmail.com",
       "password": "H123@Q34",
       "tasks": {
+        "all": [
+          {
+            "id": "2",
+            "title": "mljkhvgcfgvh",
+            "description": "oiuytrfdujikol",
+            "status": "pending",
+            "dueDate": "2025-06-14",
+            "category": "personal",
+            "priority": "medium",
+            "createdAt": "2025-06-02"
+          },
+          {
+            "id": "3",
+            "title": "vjifdejbkifd",
+            "description": "kjnrfjnkr",
+            "status": "pending",
+            "dueDate": "2025-06-27",
+            "category": "low-priority",
+            "priority": "medium",
+            "createdAt": "2025-06-02"
+          }
+        ],
+        "completed": [],
+        "pending": [
+          {
+            "id": "2",
+            "title": "mljkhvgcfgvh",
+            "description": "oiuytrfdujikol",
+            "status": "pending",
+            "dueDate": "2025-06-14",
+            "category": "personal",
+            "priority": "medium",
+            "createdAt": "2025-06-02"
+          },
+          {
+            "id": "3",
+            "title": "vjifdejbkifd",
+            "description": "kjnrfjnkr",
+            "status": "pending",
+            "dueDate": "2025-06-27",
+            "category": "low-priority",
+            "priority": "medium",
+            "createdAt": "2025-06-02"
+          }
+        ],
+        "overdue": []
+      },
+      "stats": {
+        "total": 2,
+        "completed": 0,
+        "pending": 2,
+        "overdue": 0
+      }
+    },
+    {
+      "id": "3",
+      "fullname": "sam smith",
+      "email": "testing@gmail.com",
+      "password": "Test123$",
+      "tasks": {
         "all": [],
         "completed": [],
         "pending": [],
@@ -37,10 +97,10 @@
       }
     },
     {
-      "id": "3",
-      "fullname": "sam smith",
-      "email": "testing@gmail.com",
-      "password": "Test123$",
+      "id": "4",
+      "fullname": "kdKMSDFS",
+      "email": "ola@gmail.com",
+      "password": "hYIERYER123#",
       "tasks": {
         "all": [],
         "completed": [],

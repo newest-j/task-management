@@ -18,8 +18,8 @@
               </h2>
               <div class="d-flex align-items-center">
                 <span class="text-muted me-3">
-                  {{ userLoaded ? welcomeMessage : "Loading..." }}</span
-                >
+                  {{ userLoaded ? welcomeMessage : "Loading..." }}
+                </span>
                 <div
                   class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
                   style="width: 40px; height: 40px"
@@ -30,8 +30,15 @@
             </div>
           </header>
 
+          <!-- Loading Spinner -->
+          <div v-if="taskStore.loading" class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+
           <!-- Content Area -->
-          <div class="container-fluid px-4">
+          <div v-else class="container-fluid px-4">
             <div class="row">
               <!-- Task Creation Form -->
               <div class="col-lg-6 mb-4">
@@ -39,18 +46,22 @@
                   <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">
                       <i class="bi bi-plus-circle me-2"></i>
-                      Create New Task
+                      {{
+                        taskStore.editingTaskId
+                          ? "Edit Task"
+                          : "Create New Task"
+                      }}
                     </h5>
                   </div>
                   <div class="card-body">
-                    <form @submit.prevent="">
+                    <form @submit.prevent="handleTaskSubmit">
                       <div class="mb-3">
                         <label for="title" class="form-label">
                           <i class="bi bi-pencil me-1"></i>
                           Title
                         </label>
                         <input
-                          v-model="taskname"
+                          v-model="taskStore.taskname"
                           type="text"
                           class="form-control"
                           id="title"
@@ -65,7 +76,7 @@
                           Description
                         </label>
                         <textarea
-                          v-model="taskdescription"
+                          v-model="taskStore.taskdescription"
                           class="form-control"
                           id="description"
                           rows="3"
@@ -79,16 +90,13 @@
                           Category
                         </label>
                         <select
-                          v-model="taskcategory"
+                          v-model="taskStore.taskcategory"
                           class="form-select"
                           id="category"
                           required
                         >
                           <option value="">Select Category</option>
-                          <option value="work">
-                            <i class="bi bi-briefcase"></i>
-                            Work
-                          </option>
+                          <option value="work">Work</option>
                           <option value="personal">Personal</option>
                           <option value="urgent">Urgent</option>
                           <option value="low-priority">Low Priority</option>
@@ -101,7 +109,7 @@
                           Due Date
                         </label>
                         <input
-                          v-model="taskduedate"
+                          v-model="taskStore.taskduedate"
                           type="date"
                           class="form-control"
                           id="dueDate"
@@ -110,9 +118,25 @@
                       </div>
 
                       <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary btn-lg">
+                        <button
+                          type="submit"
+                          class="btn btn-primary btn-lg"
+                          :disabled="taskStore.loading"
+                        >
                           <i class="bi bi-check-circle me-2"></i>
-                          Create Task
+                          {{
+                            taskStore.editingTaskId
+                              ? "Update Task"
+                              : "Create Task"
+                          }}
+                        </button>
+                        <button
+                          v-if="taskStore.editingTaskId"
+                          type="button"
+                          class="btn btn-secondary"
+                          @click="cancelEdit"
+                        >
+                          Cancel
                         </button>
                       </div>
                     </form>
@@ -133,105 +157,65 @@
                         </h5>
                       </div>
                       <div class="card-body">
-                        <!-- Sample Task 1 -->
+                        <!-- No tasks message -->
                         <div
+                          v-if="taskStore.tasks.length === 0"
+                          class="text-center py-4 text-muted"
+                        >
+                          <i class="bi bi-inbox-fill me-2"></i>
+                          No tasks yet. Create your first task above!
+                        </div>
+                        <!-- Dynamic Task List from Store -->
+                        <div
+                          v-for="task in taskStore.recentTasks"
+                          :key="task.id"
                           class="d-flex justify-content-between align-items-center border-bottom py-3"
                         >
                           <div class="flex-grow-1">
-                            <h6 class="mb-1">Complete project proposal</h6>
+                            <h6 class="mb-1">{{ task.title }}</h6>
                             <small class="text-muted">
-                              <span class="badge bg-primary me-2">Work</span>
-                              Due: Jan 15, 2024
+                              <span
+                                :class="`badge ${getCategoryBadgeClass(
+                                  task.category
+                                )} me-2`"
+                              >
+                                {{ task.category }}
+                              </span>
+                              <span
+                                :class="`badge ${getStatusBadgeClass(
+                                  task.status
+                                )} me-2`"
+                              >
+                                {{ task.status }}
+                              </span>
+                              Due: {{ formatDate(task.dueDate) }}
                             </small>
                           </div>
                           <div class="d-flex gap-1">
                             <button
                               class="btn btn-sm btn-outline-primary"
                               title="Edit"
+                              @click="editTask(task.id)"
                             >
                               <i class="bi bi-pencil"></i>
                             </button>
                             <button
+                              v-if="task.status === 'pending'"
                               class="btn btn-sm btn-outline-success"
                               title="Complete"
+                              @click="completeTask(task.id)"
                             >
                               <i class="bi bi-check"></i>
                             </button>
                             <button
                               class="btn btn-sm btn-outline-danger"
                               title="Delete"
+                              @click="confirmDeleteTask(task.id)"
                             >
                               <i class="bi bi-trash"></i>
                             </button>
                           </div>
                         </div>
-
-                        <!-- Sample Task 2 -->
-                        <div
-                          class="d-flex justify-content-between align-items-center border-bottom py-3"
-                        >
-                          <div class="flex-grow-1">
-                            <h6 class="mb-1">Buy groceries</h6>
-                            <small class="text-muted">
-                              <span class="badge bg-info me-2">Personal</span>
-                              Due: Jan 10, 2024
-                            </small>
-                          </div>
-                          <div class="d-flex gap-1">
-                            <button
-                              class="btn btn-sm btn-outline-primary"
-                              title="Edit"
-                            >
-                              <i class="bi bi-pencil"></i>
-                            </button>
-                            <button
-                              class="btn btn-sm btn-outline-success"
-                              title="Complete"
-                            >
-                              <i class="bi bi-check"></i>
-                            </button>
-                            <button
-                              class="btn btn-sm btn-outline-danger"
-                              title="Delete"
-                            >
-                              <i class="bi bi-trash"></i>
-                            </button>
-                          </div>
-                        </div>
-
-                        <!-- Sample Task 3 -->
-                        <div
-                          class="d-flex justify-content-between align-items-center py-3"
-                        >
-                          <div class="flex-grow-1">
-                            <h6 class="mb-1">Review quarterly reports</h6>
-                            <small class="text-muted">
-                              <span class="badge bg-danger me-2">Urgent</span>
-                              Due: Jan 12, 2024
-                            </small>
-                          </div>
-                          <div class="d-flex gap-1">
-                            <button
-                              class="btn btn-sm btn-outline-primary"
-                              title="Edit"
-                            >
-                              <i class="bi bi-pencil"></i>
-                            </button>
-                            <button
-                              class="btn btn-sm btn-outline-success"
-                              title="Complete"
-                            >
-                              <i class="bi bi-check"></i>
-                            </button>
-                            <button
-                              class="btn btn-sm btn-outline-danger"
-                              title="Delete"
-                            >
-                              <i class="bi bi-trash"></i>
-                            </button>
-                          </div>
-                        </div>
-
                         <div class="text-center mt-3">
                           <router-link
                             to="/dashboard/tasks"
@@ -258,36 +242,43 @@
                         <div class="row text-center">
                           <div class="col-6 mb-3">
                             <div class="border-end">
-                              <h4 class="text-primary mb-1">12</h4>
+                              <h4 class="text-primary mb-1">
+                                {{ taskStore.stats.total }}
+                              </h4>
                               <small class="text-muted">Total Tasks</small>
                             </div>
                           </div>
                           <div class="col-6 mb-3">
-                            <h4 class="text-success mb-1">8</h4>
+                            <h4 class="text-success mb-1">
+                              {{ taskStore.stats.completed }}
+                            </h4>
                             <small class="text-muted">Completed</small>
                           </div>
                           <div class="col-6">
                             <div class="border-end">
-                              <h4 class="text-warning mb-1">4</h4>
+                              <h4 class="text-warning mb-1">
+                                {{ taskStore.stats.pending }}
+                              </h4>
                               <small class="text-muted">Pending</small>
                             </div>
                           </div>
                           <div class="col-6">
-                            <h4 class="text-danger mb-1">2</h4>
+                            <h4 class="text-danger mb-1">
+                              {{ taskStore.stats.overdue }}
+                            </h4>
                             <small class="text-muted">Overdue</small>
                           </div>
                         </div>
-
                         <div class="mt-3">
                           <div class="d-flex justify-content-between mb-1">
                             <small>Progress</small>
-                            <small>67%</small>
+                            <small>{{ completionPercentage }}%</small>
                           </div>
                           <div class="progress" style="height: 8px">
                             <div
                               class="progress-bar bg-success"
                               role="progressbar"
-                              style="width: 67%"
+                              :style="`width: ${completionPercentage}%`"
                             ></div>
                           </div>
                         </div>
@@ -351,29 +342,151 @@
 
 <script>
 import { userDetailsStore } from "@/stores/usersDetailsStore";
+import { userTaskStore } from "@/stores/usersTaskStore";
+import Swal from "sweetalert2";
+
 export default {
   data() {
     return {
       userStore: userDetailsStore(),
+      taskStore: userTaskStore(),
       userLoaded: false,
     };
   },
 
-  async created() {
-    // Load user data when component is created
-    const success = await this.userStore.loadCurrentUser();
+  methods: {
+    async handleTaskSubmit() {
+      try {
+        const result = await this.taskStore.createTask();
 
+        if (result && result.success) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: this.taskStore.editingTaskId
+              ? "Task updated successfully!"
+              : "Task created successfully!",
+            showConfirmButton: false,
+            timer: 1500,
+            toast: true,
+          });
+        } else {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Failed to save task",
+            text: result?.error || "Unknown error",
+            showConfirmButton: false,
+            timer: 3000,
+            toast: true,
+          });
+        }
+      } catch (error) {
+        console.error("Task submission error:", error);
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Error saving task",
+          text: error.message,
+          showConfirmButton: false,
+          timer: 3000,
+          toast: true,
+        });
+      }
+    },
+
+    editTask(taskId) {
+      this.taskStore.setEditingTask(taskId);
+    },
+
+    cancelEdit() {
+      this.taskStore.clearForm();
+    },
+
+    async completeTask(taskId) {
+      await this.taskStore.completeTask(taskId);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Task completed!",
+        showConfirmButton: false,
+        timer: 1500,
+        toast: true,
+      });
+    },
+
+    async confirmDeleteTask(taskId) {
+      const result = await Swal.fire({
+        title: "Delete Task",
+        text: "Are you sure you want to delete this task?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "Yes, delete it!",
+      });
+
+      if (result.isConfirmed) {
+        await this.taskStore.deleteTask(taskId);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Task deleted successfully!",
+          showConfirmButton: false,
+          timer: 1500,
+          toast: true,
+        });
+      }
+    },
+
+    getCategoryBadgeClass(category) {
+      const classes = {
+        work: "bg-primary",
+        personal: "bg-info",
+        urgent: "bg-danger",
+        "low-priority": "bg-secondary",
+      };
+      return classes[category] || "bg-secondary";
+    },
+
+    getStatusBadgeClass(status) {
+      const classes = {
+        pending: "bg-warning",
+        completed: "bg-success",
+        overdue: "bg-danger",
+      };
+      return classes[status] || "bg-secondary";
+    },
+
+    formatDate(dateStr) {
+      if (!dateStr) return "No date";
+      const date = new Date(dateStr);
+      return date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      });
+    },
+  },
+
+  async created() {
+    const success = await this.userStore.loadCurrentUser();
     if (!success) {
-      // Redirect to login if user data couldn't be loaded
       this.$router.push("/");
     } else {
       this.userLoaded = true;
+      await this.taskStore.loadUserTasks();
     }
   },
 
   computed: {
     welcomeMessage() {
       return `Welcome back, ${this.userStore.fullname}!`;
+    },
+    completionPercentage() {
+      const total = this.taskStore.stats.total || 0;
+      const completed = this.taskStore.stats.completed || 0;
+      return total > 0 ? Math.round((completed / total) * 100) : 0;
     },
   },
 };
@@ -503,5 +616,11 @@ header {
 
 .display-6 {
   font-size: 2rem;
+}
+
+/* Loading spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
 }
 </style>
