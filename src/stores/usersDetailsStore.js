@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import Swal from "sweetalert2";
+// const API_BASE_URL = "https://task-manager-dctn.onrender.com";
 
 export const userDetailsStore = defineStore("userDetails", {
   state: () => ({
@@ -63,7 +64,7 @@ export const userDetailsStore = defineStore("userDetails", {
 
     async createUser(userData, router) {
       try {
-        const usersResponse = await fetch("http://localhost:3000/users");
+        const usersResponse = await fetch(`${API_BASE_URL}/users`);
         const users = await usersResponse.json();
 
         const emailExists = users.some(
@@ -123,7 +124,7 @@ export const userDetailsStore = defineStore("userDetails", {
           },
         };
 
-        const response = await fetch("http://localhost:3000/users", {
+        const response = await fetch(`${API_BASE_URL}/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -208,7 +209,7 @@ export const userDetailsStore = defineStore("userDetails", {
 
     async loginUser(router) {
       try {
-        const response = await fetch("http://localhost:3000/users");
+        const response = await fetch(`${API_BASE_URL}/users`);
         const users = await response.json();
 
         const matchedUser = users.find(
@@ -268,7 +269,7 @@ export const userDetailsStore = defineStore("userDetails", {
         }
 
         // Fetch user data from the server
-        const response = await fetch(`http://localhost:3000/users/${userId}`);
+        const response = await fetch(`${API_BASE_URL}/users/${userId}`);
 
         if (!response.ok) {
           throw new Error("Failed to load user data");

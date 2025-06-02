@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import Swal from "sweetalert2";
+// const API_BASE_URL = "https://task-manager-dctn.onrender.com";
 
 export const userTaskStore = defineStore("userTask", {
   state: () => ({
@@ -49,7 +50,7 @@ export const userTaskStore = defineStore("userTask", {
           throw new Error("No user ID found");
         }
 
-        const response = await fetch(`http://localhost:3000/users/${userId}`);
+        const response = await fetch(`${API_BASE_URL}/users/${userId}`);
 
         if (!response.ok) {
           throw new Error("Failed to fetch user data");
@@ -86,7 +87,7 @@ export const userTaskStore = defineStore("userTask", {
         }
 
         // Fetch current user data
-        const response = await fetch(`http://localhost:3000/users/${userId}`);
+        const response = await fetch(`${API_BASE_URL}/users/${userId}`);
 
         if (!response.ok) {
           throw new Error("Failed to fetch user data");
@@ -133,16 +134,13 @@ export const userTaskStore = defineStore("userTask", {
         user.stats.pending += 1;
 
         // Save to server
-        const updateResponse = await fetch(
-          `http://localhost:3000/users/${userId}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(user),
-          }
-        );
+        const updateResponse = await fetch(`${API_BASE_URL}/users/${userId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        });
 
         if (!updateResponse.ok) {
           throw new Error("Failed to update user data");
@@ -168,7 +166,7 @@ export const userTaskStore = defineStore("userTask", {
       try {
         this.loading = true;
         const userId = JSON.parse(localStorage.getItem("currentUserId"));
-        const response = await fetch(`http://localhost:3000/users/${userId}`);
+        const response = await fetch(`${API_BASE_URL}/users/${userId}`);
         const user = await response.json();
 
         // Find and update task
@@ -196,7 +194,7 @@ export const userTaskStore = defineStore("userTask", {
           user.stats.completed += 1;
 
           // Save to server
-          await fetch(`http://localhost:3000/users/${userId}`, {
+          await fetch(`${API_BASE_URL}/users/${userId}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(user),
@@ -226,7 +224,7 @@ export const userTaskStore = defineStore("userTask", {
       try {
         this.loading = true;
         const userId = JSON.parse(localStorage.getItem("currentUserId"));
-        const response = await fetch(`http://localhost:3000/users/${userId}`);
+        const response = await fetch(`${API_BASE_URL}/users/${userId}`);
         const user = await response.json();
 
         // Remove from all arrays
@@ -256,7 +254,7 @@ export const userTaskStore = defineStore("userTask", {
           user.stats.total -= 1;
 
           // Save to server
-          await fetch(`http://localhost:3000/users/${userId}`, {
+          await fetch(`${API_BASE_URL}/users/${userId}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(user),
@@ -281,7 +279,7 @@ export const userTaskStore = defineStore("userTask", {
       try {
         this.loading = true;
         const userId = JSON.parse(localStorage.getItem("currentUserId"));
-        const response = await fetch(`http://localhost:3000/users/${userId}`);
+        const response = await fetch(`${API_BASE_URL}/users/${userId}`);
         const user = await response.json();
 
         // Find and update task
@@ -321,7 +319,7 @@ export const userTaskStore = defineStore("userTask", {
           }
 
           // Save to server
-          await fetch(`http://localhost:3000/users/${userId}`, {
+          await fetch(`${API_BASE_URL}/users/${userId}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(user),
