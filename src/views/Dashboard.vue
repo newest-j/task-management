@@ -14,7 +14,7 @@
             <div class="d-flex justify-content-between align-items-center">
               <h2 class="mb-0 text-primary">
                 <i class="bi bi-house-door me-2"></i>
-                TaskFlow
+                PulseTasks
               </h2>
               <div class="d-flex align-items-center">
                 <span class="text-muted me-3">

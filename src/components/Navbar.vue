@@ -6,7 +6,7 @@
       <div class="container">
         <a class="navbar-brand d-flex align-items-center">
           <i class="fas fa-check-circle text-primary me-2"></i>
-          <span class="fw-bold">TaskFlow</span>
+          <span class="fw-bold">PulseTasks</span>
         </a>
         <button
           class="navbar-toggler"

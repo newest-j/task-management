@@ -6,11 +6,11 @@
           <div class="col-lg-4 mb-4 mb-lg-0">
             <div class="d-flex align-items-center mb-3">
               <i class="fas fa-check-circle text-primary me-2 fs-4"></i>
-              <span class="fw-bold fs-4">TaskFlow</span>
+              <span class="fw-bold fs-4">PulseTasks</span>
             </div>
             <p class="text-muted">
-              TaskFlow helps teams organize, track, and manage their work in one
-              place.
+              PulseTasks helps teams organize, track, and manage their work in
+              one place.
             </p>
             <div class="d-flex gap-3">
               <a href="#" class="social-icon">
@@ -70,7 +70,7 @@
         <div class="row align-items-center">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
             <p class="text-muted mb-0">
-              &copy; 2024 TaskFlow. All rights reserved.
+              &copy; 2024 PulseTasks. All rights reserved.
             </p>
           </div>
         </div>

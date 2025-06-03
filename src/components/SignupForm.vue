@@ -9,7 +9,7 @@
           class="text-decoration-none navbar-brand d-flex align-items-center"
         >
           <i class="fas fa-check-circle text-primary me-2"></i>
-          <span class="fw-bold">TaskFlow</span>
+          <span class="fw-bold">PulseTasks</span>
         </router-link>
 
         <button
@@ -48,7 +48,7 @@
               <div
                 class="col-md-5 bg-primary text-white p-4 p-md-5 d-flex flex-column justify-content-center"
               >
-                <h3 class="fw-bold mb-3">TaskFlow</h3>
+                <h3 class="fw-bold mb-3">PulseTasks</h3>
                 <p class="mb-4">
                   Everything you need to manage tasks effectively - completely
                   free.

@@ -11,8 +11,8 @@
               Manage Tasks <span class="text-primary">Effortlessly</span>
             </h1>
             <p class="lead mb-4">
-              TaskFlow helps teams organize, track, and manage their work in one
-              place. Boost productivity and achieve your goals with our
+              PulseTasks helps teams organize, track, and manage their work in
+              one place. Boost productivity and achieve your goals with our
               intuitive task management platform.
             </p>
             <div class="d-flex flex-wrap gap-2 mb-4">
@@ -72,7 +72,7 @@
             <div class="hero-image-container">
               <img
                 src="/DashboardImage.png"
-                alt="TaskFlow Dashboard"
+                alt="PulseTasks Dashboard"
                 class="img-fluid hero-image shadow-lg rounded-4"
               />
             </div>
@@ -190,7 +190,7 @@
           <h2 class="display-5 fw-bold">What our users say</h2>
           <p class="lead text-muted mx-auto" style="max-width: 600px">
             Don't just take our word for it. See what our users have to say
-            about TaskFlow.
+            about PulseTasks.
           </p>
         </div>
 
@@ -206,8 +206,8 @@
                   <i class="fas fa-star text-warning"></i>
                 </div>
                 <p class="card-text mb-4">
-                  "TaskFlow has transformed how our team manages projects. We've
-                  increased productivity by 35% since implementing it."
+                  "PulseTasks has transformed how our team manages projects.
+                  We've increased productivity by 35% since implementing it."
                 </p>
                 <div class="d-flex align-items-center">
                   <img
@@ -236,7 +236,7 @@
                   <i class="fas fa-star text-warning"></i>
                 </div>
                 <p class="card-text mb-4">
-                  "The intuitive interface and powerful features make TaskFlow
+                  "The intuitive interface and powerful features make PulseTasks
                   the best task management tool we've ever used."
                 </p>
                 <div class="d-flex align-items-center">
@@ -264,7 +264,7 @@
                   <i class="fas fa-star text-warning"></i>
                 </div>
                 <p class="card-text mb-4">
-                  "I've tried many task management tools, but TaskFlow stands
+                  "I've tried many task management tools, but PulseTasks stands
                   out with its simplicity and effectiveness."
                 </p>
                 <div class="d-flex align-items-center">
@@ -292,7 +292,7 @@
           <h6 class="text-primary fw-bold">GET STARTED</h6>
           <h2 class="display-5 fw-bold">Start managing tasks in minutes</h2>
           <p class="lead text-muted mx-auto" style="max-width: 600px">
-            TaskFlow is completely free to use. No credit card required, no
+            PulseTasks is completely free to use. No credit card required, no
             hidden fees.
           </p>
         </div>
@@ -300,7 +300,7 @@
         <!-- Why It's Free Section -->
         <div class="row mt-5 pt-4">
           <div class="col-12 text-center mb-4">
-            <h3 class="fw-bold">Why TaskFlow is completely free</h3>
+            <h3 class="fw-bold">Why PulseTasks is completely free</h3>
             <p class="text-muted mx-auto" style="max-width: 700px">
               We believe that productivity tools should be accessible to
               everyone. Our mission is to help individuals and teams work more
@@ -357,7 +357,7 @@
           <h6 class="text-primary fw-bold">FAQ</h6>
           <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
           <p class="lead text-muted mx-auto" style="max-width: 600px">
-            Everything you need to know about TaskFlow
+            Everything you need to know about PulseTasks
           </p>
         </div>
 
@@ -374,7 +374,7 @@
                     aria-expanded="true"
                     aria-controls="collapseOne"
                   >
-                    Is TaskFlow really free?
+                    Is PulseTasks really free?
                   </button>
                 </h2>
                 <div
@@ -384,7 +384,7 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    Yes, TaskFlow is completely free to use. We don't have any
+                    Yes, PulseTasks is completely free to use. We don't have any
                     paid plans or premium features. All features are available
                     to all users without any limitations.
                   </div>
@@ -411,7 +411,7 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    TaskFlow is maintained by a passionate community of
+                    PulseTasks is maintained by a passionate community of
                     developers and supported by voluntary contributions. We keep
                     our operational costs low and focus on building a great
                     product that people love to use.
@@ -440,8 +440,8 @@
                 >
                   <div class="accordion-body">
                     No, there are no limits on the number of tasks, projects, or
-                    team members you can have in TaskFlow. Use it as much as you
-                    need!
+                    team members you can have in PulseTasks. Use it as much as
+                    you need!
                   </div>
                 </div>
               </div>
@@ -483,7 +483,7 @@
                     aria-expanded="false"
                     aria-controls="collapseFive"
                   >
-                    Can I contribute to TaskFlow?
+                    Can I contribute to PulseTasks?
                   </button>
                 </h2>
                 <div
@@ -493,7 +493,7 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    TaskFlow is open to contributions from the community.
+                    PulseTasks is open to contributions from the community.
                     Whether you're a developer, designer, or just have great
                     ideas, we welcome your input. Check out our GitHub
                     repository to get started.
@@ -513,7 +513,7 @@
           <div class="col-lg-8 mb-4 mb-lg-0">
             <h2 class="display-5 fw-bold">Ready to get started?</h2>
             <p class="lead mb-0">
-              Join thousands of users that use TaskFlow to manage their work
+              Join thousands of users that use PulseTasks to manage their work
               efficiently.
             </p>
           </div>
