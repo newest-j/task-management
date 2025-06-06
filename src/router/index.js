@@ -34,11 +34,11 @@ const router = createRouter({
       name: "statistics",
       component: () => import("../views/Statistics.vue"),
     },
-    {
-      path: "/dashboard/settings",
-      name: "settings",
-      component: () => import("../views/Settings.vue"),
-    },
+    // {
+    //   path: "/dashboard/settings",
+    //   name: "settings",
+    //   component: () => import("../views/Settings.vue"),
+    // },
   ],
 });
 

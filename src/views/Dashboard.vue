@@ -301,7 +301,7 @@
                   </div>
                   <div class="card-body">
                     <div class="row">
-                      <div class="col-md-4 mb-3">
+                      <div class="col-md-6 mb-3">
                         <router-link
                           to="/dashboard/tasks"
                           class="btn btn-outline-success w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
@@ -310,7 +310,7 @@
                           <span>View Tasks</span>
                         </router-link>
                       </div>
-                      <div class="col-md-4 mb-3">
+                      <div class="col-md-6 mb-3">
                         <router-link
                           to="/dashboard/statistics"
                           class="btn btn-outline-info w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
@@ -319,7 +319,7 @@
                           <span>Statistics</span>
                         </router-link>
                       </div>
-                      <div class="col-md-4 mb-3">
+                      <!-- <div class="col-md-4 mb-3">
                         <router-link
                           to="/dashboard/settings"
                           class="btn btn-outline-warning w-100 h-100 d-flex flex-column align-items-center justify-content-center py-3 text-decoration-none"
@@ -327,7 +327,7 @@
                           <i class="bi bi-gear display-6 mb-2"></i>
                           <span>Settings</span>
                         </router-link>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -357,7 +357,16 @@ export default {
   methods: {
     async handleTaskSubmit() {
       try {
-        const result = await this.taskStore.createTask();
+        let result;
+
+        // Check if we're editing or creating a new task
+        if (this.taskStore.editingTaskId) {
+          // We're editing - use saveEditedTask
+          result = await this.taskStore.saveEditedTask();
+        } else {
+          // We're creating - use createTask
+          result = await this.taskStore.createTask();
+        }
 
         if (result && result.success) {
           Swal.fire({

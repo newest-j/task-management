@@ -403,6 +403,8 @@ import { userTaskStore } from "@/stores/usersTaskStore";
 import { userDetailsStore } from "@/stores/usersDetailsStore";
 import { Chart, registerables } from "chart.js";
 import Swal from "sweetalert2";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 // Register Chart.js components
 Chart.register(...registerables);
@@ -783,11 +785,39 @@ export default {
     },
 
     exportToPDF() {
-      Swal.fire({
-        icon: "info",
-        title: "PDF Export",
-        text: "PDF export functionality would be implemented here using a library like jsPDF.",
+      const doc = new jsPDF();
+      doc.setFontSize(16);
+      doc.text("Task Statistics", 10, 10);
+
+      // Add summary stats
+      doc.setFontSize(12);
+      doc.text(`Total Tasks: ${this.taskStore.stats.total}`, 10, 25);
+      doc.text(`Completed: ${this.taskStore.stats.completed}`, 10, 35);
+      doc.text(`In Progress: ${this.inProgressCount}`, 10, 45);
+      doc.text(`Overdue: ${this.taskStore.stats.overdue}`, 10, 55);
+
+      // Add a table of tasks (first 10 for brevity)
+      const headers = ["Title", "Status", "Category", "Priority", "Due Date"];
+      const rows = this.taskStore.tasks
+        .slice(0, 10)
+        .map((task) => [
+          task.title,
+          task.status,
+          task.category || "",
+          task.priority || "",
+          task.dueDate || "",
+        ]);
+
+      let startY = 70;
+      autoTable(doc, {
+        head: [headers],
+        body: rows,
+        startY,
+        theme: "grid",
+        headStyles: { fillColor: [78, 115, 223] },
       });
+
+      doc.save("tasks-statistics.pdf");
     },
 
     convertToCSV(data) {

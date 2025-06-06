@@ -373,6 +373,36 @@ export const userTaskStore = defineStore("userTask", {
       }
     },
 
+    // ...existing code...
+    async saveEditedTask() {
+      try {
+        const updatedTask = {
+          id: this.editingTaskId,
+          title: this.taskname,
+          description: this.taskdescription,
+          category: this.taskcategory,
+          dueDate: this.taskduedate,
+          status: "pending", // Add status if needed
+          createdAt: new Date().toISOString(), // Add if needed
+        };
+
+        const result = await this.updateTask(this.editingTaskId, updatedTask);
+
+        if (result && result.success) {
+          this.clearForm();
+          return { success: true };
+        } else {
+          return {
+            success: false,
+            error: result?.error || "Failed to update task",
+          };
+        }
+      } catch (error) {
+        console.error("Error in saveEditedTask:", error);
+        return { success: false, error: error.message };
+      }
+    },
+
     clearForm() {
       this.taskname = "";
       this.taskdescription = "";
