@@ -382,8 +382,8 @@ export const userTaskStore = defineStore("userTask", {
           description: this.taskdescription,
           category: this.taskcategory,
           dueDate: this.taskduedate,
-          status: "pending", // Add status if needed
-          createdAt: new Date().toISOString(), // Add if needed
+          status: "pending",
+          createdAt: new Date().toISOString(),
         };
 
         const result = await this.updateTask(this.editingTaskId, updatedTask);
