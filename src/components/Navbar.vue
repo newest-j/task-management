@@ -38,22 +38,6 @@
             </a>
           </Motion>
 
-          <!-- Toggle button positioned correctly -->
-          <Motion
-            :whileHover="{ scale: 1.1 }"
-            :whileTap="{ scale: 0.9 }"
-            :transition="{ type: 'spring', stiffness: 400 }"
-          >
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </Motion>
-
           <Motion
             :initial="{ opacity: 0 }"
             :animate="{ opacity: 1 }"
@@ -124,6 +108,22 @@
                 </div>
               </Motion>
             </div>
+          </Motion>
+
+          <!-- Toggle button positioned correctly -->
+          <Motion
+            :whileHover="{ scale: 1.1 }"
+            :whileTap="{ scale: 0.9 }"
+            :transition="{ type: 'spring', stiffness: 400 }"
+          >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
           </Motion>
         </div>
       </nav>
