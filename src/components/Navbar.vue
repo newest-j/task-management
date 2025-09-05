@@ -9,12 +9,16 @@
         class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm"
       >
         <div class="container">
+          <!-- Brand -->
           <Motion
             :whileHover="{ scale: 1.05 }"
             :whileTap="{ scale: 0.95 }"
             :transition="{ type: 'spring', stiffness: 400 }"
           >
-            <a class="navbar-brand d-flex align-items-center">
+            <router-link
+              to="/"
+              class="navbar-brand d-flex align-items-center text-decoration-none"
+            >
               <Motion
                 :initial="{ rotate: -180, scale: 0 }"
                 :animate="{ rotate: 0, scale: 1 }"
@@ -35,7 +39,26 @@
               >
                 <span class="fw-bold">PulseTasks</span>
               </Motion>
-            </a>
+            </router-link>
+          </Motion>
+
+          <!-- Toggler -->
+          <Motion
+            :whileHover="{ scale: 1.1 }"
+            :whileTap="{ scale: 0.9 }"
+            :transition="{ type: 'spring', stiffness: 400 }"
+          >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
           </Motion>
 
           <Motion
@@ -82,48 +105,36 @@
                 :transition="{ duration: 0.6, delay: 0.8 }"
               >
                 <div class="ms-lg-3 mt-3 mt-lg-0 d-flex">
-                  <router-link to="/login" class="text-decoration-none">
-                    <Motion
-                      :whileHover="{ scale: 1.05, y: -2 }"
-                      :whileTap="{ scale: 0.95 }"
-                      :transition="{ type: 'spring', stiffness: 400 }"
+                  <Motion
+                    :whileHover="{ scale: 1.05, y: -2 }"
+                    :whileTap="{ scale: 0.95 }"
+                    :transition="{ type: 'spring', stiffness: 400 }"
+                  >
+                    <router-link
+                      to="/login"
+                      class="btn btn-outline-primary me-2"
+                      role="button"
                     >
-                      <button class="btn btn-outline-primary me-2">
-                        Log In
-                      </button>
-                    </Motion>
-                  </router-link>
+                      Log In
+                    </router-link>
+                  </Motion>
 
-                  <router-link to="/signup" class="text-decoration-none">
-                    <Motion
-                      :whileHover="{ scale: 1.05, y: -2 }"
-                      :whileTap="{ scale: 0.95 }"
-                      :transition="{ type: 'spring', stiffness: 400 }"
+                  <Motion
+                    :whileHover="{ scale: 1.05, y: -2 }"
+                    :whileTap="{ scale: 0.95 }"
+                    :transition="{ type: 'spring', stiffness: 400 }"
+                  >
+                    <router-link
+                      to="/signup"
+                      class="btn btn-primary text-white"
+                      role="button"
                     >
-                      <button class="btn btn-primary text-white">
-                        Sign Up Free
-                      </button>
-                    </Motion>
-                  </router-link>
+                      Sign Up Free
+                    </router-link>
+                  </Motion>
                 </div>
               </Motion>
             </div>
-          </Motion>
-
-          <!-- Toggle button positioned correctly -->
-          <Motion
-            :whileHover="{ scale: 1.1 }"
-            :whileTap="{ scale: 0.9 }"
-            :transition="{ type: 'spring', stiffness: 400 }"
-          >
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
           </Motion>
         </div>
       </nav>
